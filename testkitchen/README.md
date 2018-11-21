@@ -14,6 +14,7 @@ This will pre-install chef-client on the test node and setup the host table. If 
 ```
 kitchen login automate
 sudo chef-automate admin-token
+sudo cat /automate-credentials.toml
 ```
 
 
