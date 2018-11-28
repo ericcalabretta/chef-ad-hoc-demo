@@ -1,0 +1,8 @@
+
+/terraform/aws/.terraform/
+/terraform/aws/terraform.tfvars
+/terraform/aws/.terraform.tfstate.lock.info
+/terraform/aws/terraform.tfstate
+/terraform/aws/terraform.tfstate.backup
+
+.DS_Store
