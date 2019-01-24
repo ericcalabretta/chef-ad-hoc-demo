@@ -64,7 +64,3 @@ variable "vpc_id" {
 variable "subnet_id" {
   default = ""
 }
-
-variable "count" {
-  default = "1"
-}

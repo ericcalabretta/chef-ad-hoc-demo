@@ -7,7 +7,6 @@ resource "aws_instance" "windows_node" {
     # set from default of 5m to 10m to avoid winrm timeout
     timeout = "10m"
   }
-  count                       = "${var.count}"
   ami                         = "${data.aws_ami.windows_node.id}"
   instance_type               = "t2.large"
   key_name                    = "${var.aws_key_pair_name}"

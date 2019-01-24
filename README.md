@@ -6,15 +6,15 @@ Remove demo settings from your .chef-workstation/config.toml when you're done or
 
 ## Usage
 In order run this demo, you must first install Chef-Workstation. You can find setup docs on the [Chef-Workstation site](https://downloads.chef.io/chef-workstation).
-(https://www.chef.sh/docs/chef-workstation/getting-started/)
+(htterraform/aws/variables.tftps://www.chef.sh/docs/chef-workstation/getting-started/)
 
 ## Terraform 
 This repo includes terraform code for launching the demo in AWS, Terraform is required as a pre-req: 
 
-[Terraform](https://www.terraform.io/intro/getting-started/install.html).
+[Terraform] (https://www.terraform.io/intro/getting-started/install.html).
 
 ## Test Kitchen 
-A partically working Test Kitchen example is in /testkitchen with vagrant/virtualbox but  terraform is a easier. Demo instructions will be for Terraform 
+A partically working Test Kitchen example is in /testkitchen with vagrant/virtualbox but  terraform is a easier. Demo instructions will be for Terraform  
 [Test Kitchen]
 (https://kitchen.ci/docs/getting-started/introduction/).
 
@@ -24,7 +24,7 @@ A partically working Test Kitchen example is in /testkitchen with vagrant/virtua
 3. edit `terraform.tfvars` with your own values
 4. `terraform apply`
 
-Once the provisioning finishes you will see the output with the Chef Automate, Centos node, and windows node's public IP addresses.
+Once the provisioning finishes you will see the output with the Chef Automate, Centos node, and Windows node's public IP addresses.
 
 ```
 Apply complete! Resources: 12 added, 0 changed, 0 destroyed.
@@ -54,7 +54,8 @@ api-token = qTgDQWkLxj0o2ohvJauZ9hoZWw8=
 
 1. Add your Automate server to your workstations trused cert list. If your Chef-Workstation doesn't trust the Automate Servers certificate it will not be able to send data. For a production instance you can configure Automate with a certificate that your workstation trusts to avoid this step.  
 
-```knife ssl fetch https://AUTOMATE_URL_FROM_PRIOR_STEP
+```
+knife ssl fetch https://AUTOMATE_URL_FROM_PRIOR_STEP
 ```
 
 2. Update the data-collector information for your chef-workstation configuration file located at .chef-workstation/config.toml 
@@ -100,6 +101,7 @@ chef-run -i ~/.ssh/your_key_name ssh://centos@54.186.236.51 package ntp
 [✔] Generating local policyfile... exporting... done!
 [✔] Applying package[ntp] from resource to target.
 └── [✔] [54.186.236.51] Successfully converged package[ntp].
+```
 
 #3 see NTP test pass
 
@@ -120,13 +122,13 @@ Test Summary: 1 successful, 3 failures, 0 skipped
 ```
 
 #4 look at a recipe
-
+```
 cat recipe.rb
-
+```
 #5 make the rest of the tests pass by using a recipe to complete the tasks.  You can check client-tab in Automate to visualize results after chef-run is complete. 
-
+```
 chef-run -i ~/.ssh/your_key_name ssh://centos@54.186.236.51 recipe.rb
-
+```
 #6 see all tests pass
 ```
 inspec exec -i ~/.ssh/your_key_name -t ssh://centos@54.186.236.51 test.rb
@@ -145,8 +147,9 @@ Test Summary: 4 successful, 0 failures, 0 skipped
 
 #7 checkout base http website of test node
 
+```
 http://IP_OF_CENTOS_NODE
-
+```
 
 More advanced Demo Prep:
 
@@ -161,7 +164,7 @@ This demo shows both the Chef-Client and Compliance tab's in Chef Automate. It's
 
 
 ```inspec exec -i ~/.ssh/your_key_name -t ssh://centos@54.186.236.51 https://github.com/dev-sec/linux-baseline.git --json-config inspec.json
-```
+
 
 #2 Run the hardening cookbook - Look atChef Automate for what changed 
 
