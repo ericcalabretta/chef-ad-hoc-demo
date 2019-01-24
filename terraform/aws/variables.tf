@@ -22,6 +22,10 @@ variable "aws_amazon_image_user" {
   default = "ec2-user"
 }
 
+variable "windows_admin_password" {
+  description = "Windows Administrator password to login as."
+}
+
 ////////////////////////////////
 // Tags
 
@@ -59,4 +63,8 @@ variable "vpc_id" {
 
 variable "subnet_id" {
   default = ""
+}
+
+variable "count" {
+  default = "1"
 }

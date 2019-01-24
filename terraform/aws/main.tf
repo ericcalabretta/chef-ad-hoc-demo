@@ -68,3 +68,19 @@ data "aws_ami" "centos" {
 
   owners = ["446539779517"]
 }
+
+data "aws_ami" "windows_node" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["Windows_Server-2016-English-Full-Base*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["801119661308"]
+}

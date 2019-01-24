@@ -43,6 +43,26 @@ resource "aws_security_group_rule" "ingress_allow_80_tcp_all" {
   security_group_id = "${aws_security_group.automate_demo.id}"
 }
 
+# RDP - all
+resource "aws_security_group_rule" "ingress_rdp_all" {
+  type              = "ingress"
+  from_port         = 3389
+  to_port           = 3389
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+  security_group_id = "${aws_security_group.automate_demo.id}"
+}
+
+# WinRM - all
+resource "aws_security_group_rule" "ingress_winrm_all" {
+  type              = "ingress"
+  from_port         = 5985
+  to_port           = 5986
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+  security_group_id = "${aws_security_group.automate_demo.id}"
+}
+
 # Egress: ALL
 resource "aws_security_group_rule" "egress_allow_0-65535_all" {
   type              = "egress"
