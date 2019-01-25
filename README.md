@@ -14,7 +14,7 @@ This repo includes terraform code for launching the demo in AWS, Terraform is re
 [Terraform] (https://www.terraform.io/intro/getting-started/install.html).
 
 ## Test Kitchen 
-A partically working Test Kitchen example is in /testkitchen with vagrant/virtualbox but  terraform is a easier. Demo instructions will be for Terraform  
+A partically working Test Kitchen example is in /testkitchen with vagrant/virtualbox. Terraform is overall easier. Demo instructions will be for Terraform  
 [Test Kitchen]
 (https://kitchen.ci/docs/getting-started/introduction/).
 
